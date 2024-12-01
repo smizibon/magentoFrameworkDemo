@@ -1,14 +1,14 @@
 {
   "stats": {
-    "suites": 2,
-    "tests": 2,
-    "passes": 2,
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2024-11-30T07:39:05.829Z",
-    "end": "2024-11-30T07:39:18.462Z",
-    "duration": 12633,
-    "testsRegistered": 2,
+    "start": "2024-12-01T06:50:52.015Z",
+    "end": "2024-12-01T06:51:44.591Z",
+    "duration": 52576,
+    "testsRegistered": 4,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "17f7855b-9a7e-47e4-b5d3-5ab54bf2a4c6",
+      "uuid": "63829405-426d-48dc-9b63-3f2fe7e5d4f4",
       "title": "",
       "fullFile": "/Users/zibon/Desktop/RobenDevs/AutomationDraft/test/index.js",
       "file": "/test/index.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4d81712c-af8f-4a4e-b619-475ddeb3db71",
+          "uuid": "f9d16fc9-c520-4f19-8b7a-661fdf44312e",
           "title": "Magento E-commerce Test Suite",
           "fullFile": "/Users/zibon/Desktop/RobenDevs/AutomationDraft/test/index.js",
           "file": "/test/index.js",
@@ -36,17 +36,17 @@
               "title": "\"before all\" hook: Setup Test Environment in \"Magento E-commerce Test Suite\"",
               "fullTitle": "Magento E-commerce Test Suite \"before all\" hook: Setup Test Environment in \"Magento E-commerce Test Suite\"",
               "timedOut": false,
-              "duration": 3070,
+              "duration": 3168,
               "state": null,
               "speed": null,
               "pass": false,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "await setup();\nloginPage = new LoginPage(getDriver());",
+              "code": "await setup();\nloginPage = new LoginPage(getDriver());\nproductPage = new ProductPage(getDriver());",
               "err": {},
-              "uuid": "d2a7c3f0-8ed8-446c-b795-cad73eef306c",
-              "parentUUID": "4d81712c-af8f-4a4e-b619-475ddeb3db71",
+              "uuid": "6476820f-f04e-4f60-9f20-a16d5a3668fb",
+              "parentUUID": "f9d16fc9-c520-4f19-8b7a-661fdf44312e",
               "isHook": true,
               "skipped": false
             }
@@ -56,7 +56,7 @@
               "title": "\"after all\" hook: Cleanup Test Environment in \"Magento E-commerce Test Suite\"",
               "fullTitle": "Magento E-commerce Test Suite \"after all\" hook: Cleanup Test Environment in \"Magento E-commerce Test Suite\"",
               "timedOut": false,
-              "duration": 808,
+              "duration": 715,
               "state": null,
               "speed": null,
               "pass": false,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "await teardown();",
               "err": {},
-              "uuid": "5f88c606-1108-411b-9c6c-0541dc516a44",
-              "parentUUID": "4d81712c-af8f-4a4e-b619-475ddeb3db71",
+              "uuid": "e180405d-91ba-48a5-8cae-2b986047d624",
+              "parentUUID": "f9d16fc9-c520-4f19-8b7a-661fdf44312e",
               "isHook": true,
               "skipped": false
             }
@@ -74,7 +74,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "1c45ad1e-26c4-4743-95d5-d95cf0e17134",
+              "uuid": "6dded584-3cca-4e75-948e-2e3efe66fc98",
               "title": "Login Functionality",
               "fullFile": "/Users/zibon/Desktop/RobenDevs/AutomationDraft/test/index.js",
               "file": "/test/index.js",
@@ -85,7 +85,7 @@
                   "title": "Should successfully navigate to the login page",
                   "fullTitle": "Magento E-commerce Test Suite Login Functionality Should successfully navigate to the login page",
                   "timedOut": false,
-                  "duration": 5588,
+                  "duration": 5866,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -94,8 +94,8 @@
                   "context": null,
                   "code": "await loginPage.navigateToLogin();\nconst currentUrl = await loginPage.getCurrentUrl();\nassert(currentUrl.includes(\"/login\"), \"Should be on login page\");",
                   "err": {},
-                  "uuid": "23dfce2a-568a-4276-a2c6-1c1102dad8c0",
-                  "parentUUID": "1c45ad1e-26c4-4743-95d5-d95cf0e17134",
+                  "uuid": "d2f1adc2-c953-4b97-a370-e778413b8ad2",
+                  "parentUUID": "6dded584-3cca-4e75-948e-2e3efe66fc98",
                   "isHook": false,
                   "skipped": false
                 },
@@ -103,33 +103,91 @@
                   "title": "Should successfully login with valid credentials",
                   "fullTitle": "Magento E-commerce Test Suite Login Functionality Should successfully login with valid credentials",
                   "timedOut": false,
-                  "duration": 3163,
+                  "duration": 7528,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "const email = \"0asd@asd.com\";\nconst password = \"a12345678A\";\nawait loginPage.login(email, password);\nif (!(await loginPage.isLoggedIn())) {\n  const errorMsg = await loginPage.getErrorMessage();\n  console.log(\"Login Error:\", errorMsg);\n}\nassert(await loginPage.isLoggedIn(), \"User should be logged in\");",
+                  "code": "const email = \"0asd@asd.com\";\nconst password = \"a12345678A\";\nawait loginPage.login(email, password);\nif (!(await loginPage.isLoggedIn())) {\n  const errorMsg = await loginPage.getErrorMessage();\n  console.log(\"Login Error:\", errorMsg);\n}\nassert(await loginPage.isLoggedIn(), \"User should be logged in\");\n// Clear cart after successful login\nconsole.log(\"Clearing cart after login...\");\nawait productPage.clearCart();",
                   "err": {},
-                  "uuid": "49827206-c3c2-4c8f-a19d-76e9a584151d",
-                  "parentUUID": "1c45ad1e-26c4-4743-95d5-d95cf0e17134",
+                  "uuid": "111f49d7-7506-4892-996b-6dc462eb0d1c",
+                  "parentUUID": "6dded584-3cca-4e75-948e-2e3efe66fc98",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "23dfce2a-568a-4276-a2c6-1c1102dad8c0",
-                "49827206-c3c2-4c8f-a19d-76e9a584151d"
+                "d2f1adc2-c953-4b97-a370-e778413b8ad2",
+                "111f49d7-7506-4892-996b-6dc462eb0d1c"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 8751,
+              "duration": 13394,
               "root": false,
               "rootEmpty": false,
-              "_timeout": 30000
+              "_timeout": 60000
+            },
+            {
+              "uuid": "36914f98-b754-4ec0-8883-570247671e77",
+              "title": "Shopping Cart Functionality",
+              "fullFile": "/Users/zibon/Desktop/RobenDevs/AutomationDraft/test/index.js",
+              "file": "/test/index.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should add two products to cart and verify total",
+                  "fullTitle": "Magento E-commerce Test Suite Shopping Cart Functionality Should add two products to cart and verify total",
+                  "timedOut": false,
+                  "duration": 31026,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n  await productPage.navigateToProductList();\n  console.log(\"Successfully navigated to product list\");\n  // Add first product\n  await productPage.addProductToCart(0);\n  console.log(\"First product added successfully\");\n  // Wait a moment before adding second product\n  await productPage.driver.sleep(2000);\n  // Add second product\n  await productPage.addProductToCart(1);\n  console.log(\"Second product added successfully\");\n  // Wait for cart to stabilize\n  await productPage.driver.sleep(3000);\n  // Get cart total with retry\n  let total;\n  for (let i = 0; i < 3; i++) {\n    try {\n      total = await productPage.getCartTotal();\n      if (!isNaN(total) && total > 0) break;\n    } catch (error) {\n      console.log(`Cart total attempt ${i + 1} failed:`, error.message);\n      if (i === 2) throw error;\n      await productPage.driver.sleep(1000);\n    }\n  }\n  console.log(\"Final Cart Total:\", total);\n  assert(\n    !isNaN(total) && total > 0,\n    `Cart total should be a positive number, got: ${total}`\n  );\n} catch (error) {\n  console.error(\"Shopping cart test failed:\", error);\n  throw error;\n}",
+                  "err": {},
+                  "uuid": "75a75fc4-175f-4ec1-a5d6-99dc003d979e",
+                  "parentUUID": "36914f98-b754-4ec0-8883-570247671e77",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should proceed to checkout",
+                  "fullTitle": "Magento E-commerce Test Suite Shopping Cart Functionality Should proceed to checkout",
+                  "timedOut": false,
+                  "duration": 4268,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "await productPage.proceedToCheckoutPage();\n// Add assertions for checkout page when needed",
+                  "err": {},
+                  "uuid": "2fb9ac51-2d46-4e06-a979-a534b07bb10c",
+                  "parentUUID": "36914f98-b754-4ec0-8883-570247671e77",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "75a75fc4-175f-4ec1-a5d6-99dc003d979e",
+                "2fb9ac51-2d46-4e06-a979-a534b07bb10c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 35294,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 60000
             }
           ],
           "passes": [],
@@ -139,7 +197,7 @@
           "duration": 0,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 30000
+          "_timeout": 60000
         }
       ],
       "passes": [],
