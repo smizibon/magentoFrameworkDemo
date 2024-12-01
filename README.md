@@ -47,6 +47,7 @@ project-root/
 ## Running Tests
 
 bash
-npm test
 
 ### Run all tests
+npm test
+
