@@ -1,0 +1,22 @@
+{
+  "name": "automationdraft",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "rm -rf test/reports",
+    "pretest": "npm run clean:reports",
+    "test": "mocha test/index.js --timeout 30000 --reporter mochawesome --reporter-options 'reportDir=test/reports,reportFilename=test-report,overwrite=false,html=true,json=true'",
+    "posttest": "npx mochawesome-merge test/reports/*.json > test/reports/final-report.json && npx marge test/reports/final-report.json -f report -o test/reports"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "selenium-webdriver": "^4.8.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {}
+}

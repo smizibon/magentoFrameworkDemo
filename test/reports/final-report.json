@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-11-30T07:39:05.829Z",
+    "end": "2024-11-30T07:39:18.462Z",
+    "duration": 12633
+  },
+  "results": [
+    {
+      "uuid": "17f7855b-9a7e-47e4-b5d3-5ab54bf2a4c6",
+      "title": "",
+      "fullFile": "/Users/zibon/Desktop/RobenDevs/AutomationDraft/test/index.js",
+      "file": "/test/index.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4d81712c-af8f-4a4e-b619-475ddeb3db71",
+          "title": "Magento E-commerce Test Suite",
+          "fullFile": "/Users/zibon/Desktop/RobenDevs/AutomationDraft/test/index.js",
+          "file": "/test/index.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: Setup Test Environment in \"Magento E-commerce Test Suite\"",
+              "fullTitle": "Magento E-commerce Test Suite \"before all\" hook: Setup Test Environment in \"Magento E-commerce Test Suite\"",
+              "timedOut": false,
+              "duration": 3070,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await setup();\nloginPage = new LoginPage(getDriver());",
+              "err": {},
+              "uuid": "d2a7c3f0-8ed8-446c-b795-cad73eef306c",
+              "parentUUID": "4d81712c-af8f-4a4e-b619-475ddeb3db71",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: Cleanup Test Environment in \"Magento E-commerce Test Suite\"",
+              "fullTitle": "Magento E-commerce Test Suite \"after all\" hook: Cleanup Test Environment in \"Magento E-commerce Test Suite\"",
+              "timedOut": false,
+              "duration": 808,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await teardown();",
+              "err": {},
+              "uuid": "5f88c606-1108-411b-9c6c-0541dc516a44",
+              "parentUUID": "4d81712c-af8f-4a4e-b619-475ddeb3db71",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "1c45ad1e-26c4-4743-95d5-d95cf0e17134",
+              "title": "Login Functionality",
+              "fullFile": "/Users/zibon/Desktop/RobenDevs/AutomationDraft/test/index.js",
+              "file": "/test/index.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should successfully navigate to the login page",
+                  "fullTitle": "Magento E-commerce Test Suite Login Functionality Should successfully navigate to the login page",
+                  "timedOut": false,
+                  "duration": 5588,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "await loginPage.navigateToLogin();\nconst currentUrl = await loginPage.getCurrentUrl();\nassert(currentUrl.includes(\"/login\"), \"Should be on login page\");",
+                  "err": {},
+                  "uuid": "23dfce2a-568a-4276-a2c6-1c1102dad8c0",
+                  "parentUUID": "1c45ad1e-26c4-4743-95d5-d95cf0e17134",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should successfully login with valid credentials",
+                  "fullTitle": "Magento E-commerce Test Suite Login Functionality Should successfully login with valid credentials",
+                  "timedOut": false,
+                  "duration": 3163,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const email = \"0asd@asd.com\";\nconst password = \"a12345678A\";\nawait loginPage.login(email, password);\nif (!(await loginPage.isLoggedIn())) {\n  const errorMsg = await loginPage.getErrorMessage();\n  console.log(\"Login Error:\", errorMsg);\n}\nassert(await loginPage.isLoggedIn(), \"User should be logged in\");",
+                  "err": {},
+                  "uuid": "49827206-c3c2-4c8f-a19d-76e9a584151d",
+                  "parentUUID": "1c45ad1e-26c4-4743-95d5-d95cf0e17134",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "23dfce2a-568a-4276-a2c6-1c1102dad8c0",
+                "49827206-c3c2-4c8f-a19d-76e9a584151d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8751,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 30000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 30000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "test-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "test/reports",
+        "reportFilename": "test-report",
+        "overwrite": "false",
+        "html": "true",
+        "json": "true"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
